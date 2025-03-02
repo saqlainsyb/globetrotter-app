@@ -1,6 +1,6 @@
 // src/api/api.js
 
-const API_BASE_URL = 'http://localhost:5000/api' // Change this to your backend base URL
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL; // Change this to your backend base URL
 
 /**
  * GET request to fetch quiz data.
