@@ -19,7 +19,7 @@ CSS/SCSS	Styling
 GitHub Actions	CI/CD Automation
 Render	Deployment (Backend/DB)
 Vercel	Deployment (Frontend)
-
+***Used ChatGPT to generate 100 datasets for destination quizes***
 
 📂 Project Structure:
 globetrotter-app/
