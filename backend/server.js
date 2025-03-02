@@ -16,18 +16,28 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Middleware
-app.use(cors({  origin: 'http://localhost:5173' }));
+const allowedOrigins = [
+  'http://localhost:5173',                         // Local dev frontend
+  'https://globetrotter-app-omega.vercel.app'     // Production frontend
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+          callback(null, true);
+      } else {
+          callback(new Error('Not allowed by CORS'));
+      }
+  },
+  credentials: true
+}));
+
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
 
 // Routes
 app.use('/api/destinations', require('./src/routes/destination.routes'));
 app.use('/api/user', require('./src/routes/user.routes'));
-
-// Root endpoint for testing
-// app.get('/', (req, res) => {
-//   res.send('Globetrotter API is running');
-// });
 
 const endpoints = listEndpoints(app);
 endpoints.forEach(route => {
