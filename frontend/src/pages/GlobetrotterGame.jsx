@@ -7,6 +7,7 @@ import Confetti from "react-confetti";
 import { ChevronsDown, RefreshCw } from "lucide-react";
 import sadAnimation from "@/assets/sad-animation.gif";
 import ChallengeFriend from '@/components/challengeFriend'
+import { Helmet } from 'react-helmet-async';
 
 function Globetrotter() {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -75,6 +76,7 @@ function Globetrotter() {
 
   return (
     <div className="h-dvh w-full bg-neutral-950 relative flex flex-col items-center justify-center antialiased p-6">
+        <Helmet title="Play Globetrotter"/>
         {/* Score Section */}
         <div className="absolute top-6 left-6 flex items-center gap-4 bg-neutral-900/80 p-3 rounded-full border border-neutral-700 shadow-lg">
         <div className="flex items-center gap-2 text-white font-medium">

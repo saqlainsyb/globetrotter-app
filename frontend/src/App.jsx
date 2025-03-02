@@ -11,7 +11,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/play-globetrotter" element={<Globetrotter />} />
         <Route path="/play-globetrotter/invitation" element={<InvitationPage />} />
-        {/* <Route path="/results" element={<Results />} /> */}
       </Routes>
     </HelmetProvider>
   )
