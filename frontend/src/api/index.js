@@ -47,7 +47,6 @@ export async function registerUser({ username, score, correctAnswers, incorrectA
  * Fetch challenge invite link & image.
  */
 export async function getChallengeInvite(userId) {
-  console.log("hey ", userId)
   const response = await fetch(`${API_BASE_URL}/user/challenge-friend?userId=${userId}`);
   if (!response.ok) {
     throw new Error('Error fetching challenge invite');
